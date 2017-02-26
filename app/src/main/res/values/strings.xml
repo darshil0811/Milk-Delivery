@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MDAPP</string>
     <string name="get_started">Get Started</string>
+    <string name="feedback">Feedback!</string>
+    <string name="ok">ok</string>
+    <string name="internetconnectionmessage">Internet connection lost \n\nPlease check your wifi or mobile network</string>
 </resources>
