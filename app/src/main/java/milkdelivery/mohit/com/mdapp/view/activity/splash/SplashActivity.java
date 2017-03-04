@@ -68,4 +68,11 @@ public class SplashActivity extends AppCompatActivity {
         },Splash_Time);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }
+
+
