@@ -25,8 +25,7 @@
     android:layout_height="wrap_content"
     android:paddingLeft="50dp"
     android:paddingRight="50dp"
-    android:layout_marginTop="110dp"
-   >
+    android:layout_marginTop="110dp">
 
 
     <EditText
@@ -100,7 +99,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonClickLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -122,7 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000"
-            android:text="Don't have an account yet? Please Sign Up?"
+            android:text="@string/don_t_have_an_account_yet_please_sign_up"
             android:layout_below="@+id/Linearlayout4"
             android:layout_alignParentBottom="true" />
 
