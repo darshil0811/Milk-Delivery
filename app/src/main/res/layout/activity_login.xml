@@ -114,6 +114,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/textViewSignup"
             android:layout_marginBottom="10dp"
             android:gravity="center|bottom"
             android:textStyle="normal"

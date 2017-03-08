@@ -1,9 +1,11 @@
 package milkdelivery.mohit.com.mdapp.view.activity.login;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -12,6 +14,7 @@ import butterknife.OnClick;
 import milkdelivery.mohit.com.mdapp.R;
 import milkdelivery.mohit.com.mdapp.model.properties.login.LoginResultPrp;
 import milkdelivery.mohit.com.mdapp.view.activity.BaseActivity;
+import milkdelivery.mohit.com.mdapp.view.activity.register.RegisterActivity;
 
 public class LoginActivity extends BaseActivity implements LoginView {
 
@@ -20,6 +23,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     EditText editTextEmail;
     @BindView(R.id.editTextPassword)
     EditText editTextPassword;
+    @BindView(R.id.textViewSignup)
+    TextView textViewSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
         ButterKnife.bind(this);
     }
 
+
+            @OnClick(R.id.textViewSignup)
+            public void onSignUpTextClick()
+            {
+                startActivity(new Intent(this, RegisterActivity.class));
+
+            }
 
             @OnClick(R.id.buttonClickLogin)
             public void onLoginButtonClick()
