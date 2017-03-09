@@ -2,6 +2,7 @@ package milkdelivery.mohit.com.mdapp.view.activity.register;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
         setContentView(R.layout.activity_register);
        registerPresenterInterface=new RegisterPresenter(this,this);
         ButterKnife.bind(this);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_UNCHANGED| WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
+
     }
 
 

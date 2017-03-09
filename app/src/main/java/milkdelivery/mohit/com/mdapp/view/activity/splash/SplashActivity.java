@@ -8,11 +8,13 @@ import android.os.Bundle;
 import milkdelivery.mohit.com.mdapp.R;
 import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.ApplicationDialogs;
 import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.connectionutils.ConnectionUtils;
+import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
+import milkdelivery.mohit.com.mdapp.view.activity.home.HomeActivity;
 import milkdelivery.mohit.com.mdapp.view.activity.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    int Splash_Time=3000;
+    int Splash_Time = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,33 +28,25 @@ public class SplashActivity extends AppCompatActivity {
         checkconnection();
     }
 
-    private void checkconnection()
-{
+    private void checkconnection() {
 
-    //show dialog if there is no internet connectivity
+        //show dialog if there is no internet connectivity
 
-    ConnectionUtils connectionUtils=new ConnectionUtils();
-    boolean value=connectionUtils.checkInternetConnection(this);
-    if (value==true)
-    {
+        ConnectionUtils connectionUtils = new ConnectionUtils();
+        boolean value = connectionUtils.checkInternetConnection(this);
+        if (value == true) {
 
-        startSplash();
-    }
+            startSplash();
+        } else {
 
-    else {
-
-        ApplicationDialogs dialog=new ApplicationDialogs();
-        dialog.showMessageDialogWithFinish(this,getString(R.string.internetconnectionmessage));
+            ApplicationDialogs dialog = new ApplicationDialogs();
+            dialog.showMessageDialogWithFinish(this, getString(R.string.internetconnectionmessage));
 
 
+        }
 
 
     }
-
-
-
-
-}
 
     private void startSplash() {
 
@@ -62,17 +56,24 @@ public class SplashActivity extends AppCompatActivity {
 
                 // Navigate to login or homescreen
 
-                startActivity(new Intent(SplashActivity.this,LoginActivity.class));
+                MW_SharedPref sharedPref = new MW_SharedPref();
+                if (sharedPref.getInt(SplashActivity.this, sharedPref.USER_ID) > 0) {
+
+                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    finish();
+                }
+                else
+                {
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    finish();
+
+                }
 
             }
-        },Splash_Time);
+        }, Splash_Time);
 
     }
 
-    @Override
-    public void onBackPressed() {
-        finish();
-    }
+
 }
-
 

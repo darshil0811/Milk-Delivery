@@ -15,7 +15,7 @@
     <string name="passwordempty">Please enter your password</string>
     <string name="emailisvalid">email is valid</string>
     <string name="emailisnotvalid">Please enter a valid email...</string>
-    <string name="wrongusernamepassword">Wrong username/password</string>
+    <string name="wrongusernamepassword">Wrong email/password</string>
     <string name="already_have_an_account_please_sign_in">Already have an account, Please Sign in</string>
     <string name="signup_now">Signup Now</string>
     <string name="user_name">User Name</string>
