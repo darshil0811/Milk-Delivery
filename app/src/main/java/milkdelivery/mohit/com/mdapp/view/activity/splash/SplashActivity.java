@@ -11,6 +11,7 @@ import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.connectionutils
 import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
 import milkdelivery.mohit.com.mdapp.view.activity.home.HomeActivity;
 import milkdelivery.mohit.com.mdapp.view.activity.login.LoginActivity;
+import milkdelivery.mohit.com.mdapp.view.activity.profile.ProfileActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -59,7 +60,7 @@ public class SplashActivity extends AppCompatActivity {
                 MW_SharedPref sharedPref = new MW_SharedPref();
                 if (sharedPref.getInt(SplashActivity.this, sharedPref.USER_ID) > 0) {
 
-                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    startActivity(new Intent(SplashActivity.this, ProfileActivity.class));
                     finish();
                 }
                 else

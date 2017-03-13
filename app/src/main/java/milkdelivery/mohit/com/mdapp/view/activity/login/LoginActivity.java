@@ -13,9 +13,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import milkdelivery.mohit.com.mdapp.R;
 import milkdelivery.mohit.com.mdapp.model.properties.login.LoginResultPrp;
+import milkdelivery.mohit.com.mdapp.model.properties.login.profile.ProfileResult;
 import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
 import milkdelivery.mohit.com.mdapp.view.activity.BaseActivity;
 import milkdelivery.mohit.com.mdapp.view.activity.home.HomeActivity;
+import milkdelivery.mohit.com.mdapp.view.activity.profile.ProfileActivity;
 import milkdelivery.mohit.com.mdapp.view.activity.register.RegisterActivity;
 
 public class LoginActivity extends BaseActivity implements LoginView {
@@ -77,7 +79,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         {
             MW_SharedPref sharedPref=new MW_SharedPref();
             sharedPref.setInt(this,sharedPref.USER_ID,loginResult.getResult().getId());
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, ProfileActivity.class));
             finish();
 
         }

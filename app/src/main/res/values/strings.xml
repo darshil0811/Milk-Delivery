@@ -25,4 +25,31 @@
     <string name="mobilenumberempty">Please enter your mobile no.</string>
     <string name="emailexists">email already exists!</string>
     <string name="registersuccess">Registeration Successful...</string>
+    <string name="Address">Address</string>
+    <string name="City">City</string>
+    <string name="state">State</string>
+    <string name="Pincode">Pincode</string>
+    <string name="update_info">Update Info</string>
+
+
+
+
+
+    <string-array name="cities">
+    <item>Mohali</item>
+     <item>Chandigarh</item>
+        <item>Ambala</item>
+        <item>Zirakpur</item>
+        <item>Panchkula</item>
+        <item>Moga</item>
+
+    </string-array>
+    <string-array name="states">
+        <item>Haryana</item>
+        <item>Punjab</item>
+
+    </string-array>
+
+
+
 </resources>

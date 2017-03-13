@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:background="@drawable/splash_bg"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/Linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageView
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/splash_logo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:id="@+id/Linearlayout2"
+        android:orientation="vertical"
+        android:layout_below="@+id/Linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        >
+
+        <EditText
+
+            android:background="@drawable/custom_edit_text_style"
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="@string/Address"
+            android:inputType="textPostalAddress"
+            android:textColorHint="#000"
+            android:textSize="17dp"
+            />
+
+        <TextView
+            android:layout_marginTop="7dp"
+
+            android:background="@drawable/custom_edit_text_style"
+            android:id="@+id/textViewCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="@string/City"
+            android:textColorHint="#000"
+            android:textSize="17dp"
+            />
+        <TextView
+            android:layout_marginTop="7dp"
+
+            android:background="@drawable/custom_edit_text_style"
+            android:id="@+id/textViewState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="@string/state"
+            android:maxLength="10"
+            android:textColorHint="#000"
+            android:textSize="17dp"
+            />
+
+
+
+        <EditText
+            android:layout_marginTop="7dp"
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text_style"
+            android:inputType="number"
+            android:id="@+id/editTextPinCode"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:textColorHint="#000"
+            android:hint="@string/Pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="7dp"
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text_style"
+            android:id="@+id/textViewCountry"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:textColorHint="#000"
+            android:hint="Country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+
+        android:layout_below="@+id/Linearlayout2"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingRight="100dp"
+        android:paddingLeft="100dp"
+        android:id="@+id/Linearlayout4"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonClickUpdateInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_selectors_style"
+            android:padding="14dp"
+            android:text="@string/update_info"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
