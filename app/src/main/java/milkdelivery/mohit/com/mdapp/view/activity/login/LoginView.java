@@ -13,5 +13,5 @@ public interface LoginView {
     void startProgress();
     void stopProgress();
     void showFeedbackMessage( String message);
-    void onLoginComplete(LoginResultPrp loginResult);
+    void onLoginSuccess();
 }

@@ -1,4 +1,4 @@
-package milkdelivery.mohit.com.mdapp.model.network_connection;
+package milkdelivery.mohit.com.mdapp.web.connection;
 
 /**
  * Created by mohit on 05-03-2017.

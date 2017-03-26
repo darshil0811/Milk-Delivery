@@ -70,9 +70,10 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
     }
 
     @Override
-    public void onRegisterComplete(RegisterResponse registerResponse) {
-
-        Toast.makeText(this,getString(R.string.registersuccess),Toast.LENGTH_SHORT).show();
-
+    public void onRegistrationComplete() {
+        this.finish();
     }
+
+
 }
+

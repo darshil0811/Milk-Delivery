@@ -3,9 +3,12 @@ package milkdelivery.mohit.com.mdapp.view.activity.login;
 import android.app.Activity;
 
 import milkdelivery.mohit.com.mdapp.R;
-import milkdelivery.mohit.com.mdapp.model.network_connection.IBaseurl;
-import milkdelivery.mohit.com.mdapp.model.network_connection.WebInterface;
+import milkdelivery.mohit.com.mdapp.utils.customcontrols.dialogs.sharedpref.MW_SharedPref;
+import milkdelivery.mohit.com.mdapp.web.connection.IBaseurl;
+import milkdelivery.mohit.com.mdapp.web.connection.WebInterface;
 import milkdelivery.mohit.com.mdapp.model.properties.login.LoginResultPrp;
+import milkdelivery.mohit.com.mdapp.web.connection.WebRequestHandler;
+import milkdelivery.mohit.com.mdapp.web.handler.LoginHandler;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by mohit on 05-03-2017.
  */
 
-public class LoginPresenter implements LoginPresenterInterface,IBaseurl {
+public class LoginPresenter implements LoginPresenterInterface,LoginHandler{
 
     Activity activity;
     LoginView loginview;
@@ -91,26 +94,51 @@ public class LoginPresenter implements LoginPresenterInterface,IBaseurl {
         //here we pass the request to the server
 
     private void makeLoginRequest(String email, String password) {
-
         loginview.startProgress();
-        Retrofit retro=new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-        Call<LoginResultPrp> result=retro.create(WebInterface.class).requestLogin(email, password);
-        result.enqueue(new Callback<LoginResultPrp>() {
-            @Override
-            public void onResponse(Call<LoginResultPrp> call, Response<LoginResultPrp> response) {
-                loginview.stopProgress();
-                loginview.onLoginComplete(response.body());
-            }
+        WebRequestHandler webRequestHandler = new WebRequestHandler();
+        webRequestHandler.requestLogin(email, password, this);
 
-            @Override
-            public void onFailure(Call<LoginResultPrp> call, Throwable t) {
-                loginview.stopProgress();
+
+    }
+
+    @Override
+    public void loginSuccess(LoginResultPrp loginResultPrp) {
+        loginview.stopProgress();
+        if (loginResultPrp.getResult() != null) {
+            if (loginResultPrp.getResult().getStatus() == 1) {
+                //Save Value to shared preferences
+                MW_SharedPref sharedPref=new MW_SharedPref();
+                sharedPref.setInt(activity,sharedPref.USER_ID,loginResultPrp.getResult().getId());
+                loginview.onLoginSuccess();}
+            else {
+                //Show user wrong message
                 loginview.showFeedbackMessage(activity.getString(R.string.wrongusernamepassword));
+            }
+        } else {
+            //Retruend value is null so cant define anything here
+            loginview.showFeedbackMessage(activity.getString(R.string.somethingwentwrong));
+        }
 
             }
-        });
 
-    }}
+    @Override
+    public void loginFail(String message) {
+        loginview.stopProgress();
+
+        if(message!=null)
+        {
+            loginview.showFeedbackMessage(message);
+        }
+        else
+        {
+            loginview.showFeedbackMessage(activity.getString(R.string.somethingwentwrong));
+
+        }
+
+    }
+
+    }
+
 
 
 

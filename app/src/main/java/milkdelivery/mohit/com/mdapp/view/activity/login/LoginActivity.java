@@ -73,23 +73,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void onLoginComplete(LoginResultPrp loginResult) {
+    public void onLoginSuccess(){
 
-        if(loginResult.getResult().getStatus()==1)
-        {
-            MW_SharedPref sharedPref=new MW_SharedPref();
-            sharedPref.setInt(this,sharedPref.USER_ID,loginResult.getResult().getId());
+
             startActivity(new Intent(this, ProfileActivity.class));
             finish();
 
-        }
-        else
-        {
-        Toast.makeText(this,getString(R.string.wrongusernamepassword),Toast.LENGTH_SHORT).show();
-        }
 
-    }
-
-}
+}}
 
 

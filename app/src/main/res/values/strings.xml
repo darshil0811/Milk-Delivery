@@ -30,9 +30,7 @@
     <string name="state">State</string>
     <string name="Pincode">Pincode</string>
     <string name="update_info">Update Info</string>
-
-
-
+    <string name="somethingwentwrong">something went wrong, please try again later...</string>
 
 
     <string-array name="cities">

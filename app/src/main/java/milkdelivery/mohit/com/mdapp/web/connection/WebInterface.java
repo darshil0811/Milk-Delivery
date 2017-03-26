@@ -1,4 +1,4 @@
-package milkdelivery.mohit.com.mdapp.model.network_connection;
+package milkdelivery.mohit.com.mdapp.web.connection;
 
 import milkdelivery.mohit.com.mdapp.model.properties.login.LoginResultPrp;
 import milkdelivery.mohit.com.mdapp.model.properties.login.profile.ProfileResult;

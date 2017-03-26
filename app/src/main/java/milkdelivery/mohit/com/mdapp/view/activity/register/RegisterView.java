@@ -13,5 +13,4 @@ public interface RegisterView {
     void startProgress();
     void stopProgress();
     void showFeedbackMessage( String message);
-    void onRegisterComplete(RegisterResponse registerResponse);
-}
+    void onRegistrationComplete();}
