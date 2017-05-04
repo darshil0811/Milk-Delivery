@@ -9,11 +9,12 @@ import milkdelivery.mohit.com.mdapp.model.properties.login.profile.ProfileResult
 public interface ProfileView {
 
     void loadProfile(ProfileResult profileResult);
-    void updateProfileResult();
     void startProgress();
     void stopProgress();
-    void loadCities(String[] cities);
-    void loadStates(String[] states);
+    void onProfileUpdateComplete();
+    void showFeedbackMessage(String message);
+
+
 
 
 

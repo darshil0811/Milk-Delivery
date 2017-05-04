@@ -6,5 +6,9 @@ package milkdelivery.mohit.com.mdapp.web.connection;
 
 public interface IBaseurl {
 
+
+    String USER_IMAGE_BASE_URL="http://live.csdevhub.com/milkwala/ws/uploads/profile_images/";
+
     String BASE_URL="http://live.csdevhub.com/";
 }
+

@@ -31,6 +31,16 @@
     <string name="Pincode">Pincode</string>
     <string name="update_info">Update Info</string>
     <string name="somethingwentwrong">something went wrong, please try again later...</string>
+    <string name="username">User Name</string>
+    <string name="phone">Phone No.</string>
+    <string name="showQrCode">Show QR Code</string>
+    <string name="Loadingpleasewait">loading, please wait...</string>
+    <string name="unabletoreadyourprofile">unable to update profile</string>
+    <string name="profileupdated">profile updated...</string>
+    <string name="unbaletoupdateyourprofile">unable to update your profile!</string>
+    <string name="cancel">cancel</string>
+    <string name="pleaseenablecameraPermission">please enable camera permission</string>
+    <string name="pleaseenableReadExternalStoragePermission">please enable read external storage permission</string>
 
 
     <string-array name="cities">
@@ -46,6 +56,12 @@
         <item>Haryana</item>
         <item>Punjab</item>
 
+    </string-array>
+
+
+    <string-array name="imageSelectOptions">
+        <item>Camera</item>
+        <item>Gallery</item>
     </string-array>
 
 
